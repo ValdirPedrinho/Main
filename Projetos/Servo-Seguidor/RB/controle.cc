@@ -10,12 +10,6 @@ using namespace std;
 
 static const int SPI_CHANNEL = 0;
 
-void spi_error(void)
-{
-    cout << "SPI error";
-    return -1;
-}
-
 const uint8_t ADC_BITS_RESOLUTION   = 15;
 const double SENSOR_GAIN            = 0.1;
 const double MIN_SENSOR_INPUT       = 0.2;
@@ -37,7 +31,8 @@ int main(void)
     fd = wiringPiSPISetup(SPI_CHANNEL, 500000);
     if(fd < 0)
     {
-        spi_error();
+	    cout << "SPI error";
+	    return -1;
     }
 
     Ads1115c_t adc;
@@ -52,11 +47,12 @@ int main(void)
 
     while(true)
     {
-        buffer[0] = runPIfromADC2PWM(&ctrPI, 5.0, adc.getAvgValue(ADC_CHANNEL)) - 180;
+        buffer[0] = runPIfromADC2PWM(&ctrPI, 5.0, (uintMAX_t) adc.getAvgValue(ADC_CHANNEL)) - 180;
         fd = wiringPiSPIDataRW(SPI_CHANNEL, buffer, 1);
         if(fd < 0)
         {
-            spi_error();
+	   	 	cout << "SPI error";
+	    	return -1;
         }
 
         usleep(5*1000);

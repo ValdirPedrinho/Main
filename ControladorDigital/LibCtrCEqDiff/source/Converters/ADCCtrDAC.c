@@ -2,7 +2,7 @@
 
 void createADC2CtrHandler(ADC2Ctr* adc2ctr, uint8_t bits_ADC, double sensor_gain, double min_input, double max_input)
 {
-	adc2ctr->max_adc = _pow(2,bits_ADC) -1;
+	adc2ctr->max_adc = (uintMAX_t) _pow(2,bits_ADC) -1;
 	adc2ctr->sensor_gain = sensor_gain;
 	adc2ctr->min_input = _abs(min_input);
 	adc2ctr->delta_input = max_input - min_input;
@@ -29,5 +29,5 @@ uintMAX_t runCtr2PWM(Ctr2PWM ctr2PWM, double ctr_output)
 	double aux = ctr_output - ctr2PWM.min_ctr_output;
 	aux *= ((double) ctr2PWM.max_pwm);
 	aux /= (ctr2PWM.delta_ctr_output);
-	return _round(aux);
+	return  (uintMAX_t) _round(aux);
 }

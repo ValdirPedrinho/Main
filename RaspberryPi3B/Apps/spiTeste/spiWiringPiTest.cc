@@ -34,7 +34,7 @@ int main(void)
                 return -1;
             }
             cout << "buf = " << buffer[0] << endl;
-            usleep(1000*500);
+            usleep(1000*50);
         }
         sleep(5);
         for(int i = 190; i >=10; i--)
@@ -50,7 +50,7 @@ int main(void)
                 return -1;
             }
             cout << "buf = " << buffer[0] << endl;
-            usleep(1000*500);
+            usleep(1000*50);
         }
     }
 
