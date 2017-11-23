@@ -5,7 +5,7 @@
 // SPI variables
 //----------------------------------------------
 
-char buf [100];                // spi digital buffer
+int buf [100];                // spi digital buffer
 volatile byte index;           // buffer index
 volatile boolean process_it;   // flag to process data
 
@@ -69,9 +69,7 @@ void loop (void)
 {
     if (process_it)
     {
-//        buf [index] = 0;
-//        Serial.println (buf);
-        pos = (int) buf[0] - 10;
+        pos += buf[0];
         s.write(pos);
         index = 0;
         process_it = false;

@@ -1,5 +1,7 @@
-SRCadc   =  ../../Perifericos/Ads1115c/source/*.cc
-INCadc   =  ../../valdir/Perifericos/Ads1115c/include
+DIR_TARGET = $(shell cd ../..;pwd)
+
+SRCadc   =  $(DIR_TARGET)/Perifericos/Ads1115c/source/*.cc
+INCadc   =  $(DIR_TARGET)/Perifericos/Ads1115c/include
 
 INCLUDE =	-I $(INCadc)
 SRC	 	=	$(SRCadc)

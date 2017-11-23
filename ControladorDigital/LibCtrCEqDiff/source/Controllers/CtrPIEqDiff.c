@@ -23,7 +23,6 @@ void createPIHandler(CtrPI* cPI, ADC2Ctr* adc2Ctr, Ctr2PWM* ctr2PWM, double k, d
 double runPI(CtrPI* cPI, double ref, double feedback)
 {
 	double aux = runTF1stOrder(&(cPI->refFilter), ref);
-	printf("filter=%f\t", aux);
 	double e =  aux - feedback;
 	double y = runTF1stOrder(&(cPI->ctr), e);
 	if(y > cPI->max_output) 
