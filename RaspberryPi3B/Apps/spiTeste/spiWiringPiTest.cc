@@ -22,6 +22,7 @@ int main(void)
 
     while(true)
     {
+		sleep(5);
         for(int i = 10; i <= 190; i++)
         {
             cout << "enviando..." << i << endl;
@@ -34,7 +35,7 @@ int main(void)
                 return -1;
             }
             cout << "buf = " << buffer[0] << endl;
-            usleep(1000*50);
+            usleep(5000);
         }
         sleep(5);
         for(int i = 190; i >=10; i--)
@@ -50,7 +51,7 @@ int main(void)
                 return -1;
             }
             cout << "buf = " << buffer[0] << endl;
-            usleep(1000*50);
+            usleep(5000);
         }
     }
 

@@ -18,8 +18,8 @@ const uintMAX_t PWM_MAX_VALUE       = 360;
 const double CTR_MAX_OUTPUT         = 100.0;
 const double CTR_MIN_OUTPUT         = 0.0;
 const double CTR_K                  = 1.5;
-const double CTR_TAU                = 1000*micro_const;
-const double FREQ_SAMPLING          = 10.0;
+const double CTR_TAU                = 1*mili_const;
+const double FREQ_SAMPLING          = 30.0;
 
 int main(void)
 {
@@ -27,6 +27,7 @@ int main(void)
 
     int fd;
     unsigned char buffer[100];
+	int pos = 90;
 
     fd = wiringPiSPISetup(SPI_CHANNEL, 500000);
     if(fd < 0)
@@ -36,7 +37,7 @@ int main(void)
     }
 
     Ads1115c_t adc;
-
+/*
     ADC2Ctr adc2Ctr;
     Ctr2PWM ctr2PWM;
     CtrPI ctrPI;
@@ -44,10 +45,25 @@ int main(void)
     createADC2CtrHandler(&adc2Ctr, ADC_BITS_RESOLUTION, SENSOR_GAIN, MIN_SENSOR_INPUT, MAX_SENSOR_INPUT);
     createCtr2PWMHandler(&ctr2PWM, PWM_MAX_VALUE, CTR_MIN_OUTPUT, CTR_MAX_OUTPUT);
     createPIHandler(&ctrPI, &adc2Ctr, &ctr2PWM, CTR_K, CTR_TAU, FREQ_SAMPLING, CTR_MIN_OUTPUT, CTR_MAX_OUTPUT);
-
+*/
     while(true)
     {
-        buffer[0] = runPIfromADC2PWM(&ctrPI, 5.0, (uintMAX_t) adc.getAvgValue(ADC_CHANNEL)) - 180;
+/*
+        buffer[0] = runPIfromADC2PWM(&ctrPI, 5.0, (uintMAX_t) adc.getAvgValue(ADC_CHANNEL));
+*/
+		float value = adc.readVoltage(ADC_CHANNEL);
+		for(int i=0; i<5; i++) {
+			if( value < 1.0) {
+				pos+=1;
+			}
+			if( value > 1.0) {
+				pos-=1;
+			}
+			if(pos > 200) {pos = 200;}
+			if(pos < 20) {pos = 20;}
+			cout << value << endl;
+		}
+		buffer[0] = pos + 20;
         fd = wiringPiSPIDataRW(SPI_CHANNEL, buffer, 1);
         if(fd < 0)
         {
@@ -55,7 +71,6 @@ int main(void)
 	    	return -1;
         }
 
-        usleep(5*1000);
     }
 
     return 0;

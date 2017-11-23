@@ -77,21 +77,21 @@ useconds_t Ads1115c::defineDelay(void)
 {
 	switch(regDataSampleRate) {
 		case ADC_DSR_8SPS:
-			return useconds_t(1000*1000/8);
+			return useconds_t(1000*1000/1);
 		case ADC_DSR_16SPS:
-			return useconds_t(1000*1000/16);
+			return useconds_t(1000*1000/2);
 		case ADC_DSR_32SPS:
-			return useconds_t(1000*1000/32);
+			return useconds_t(1000*1000/2);
 		case ADC_DSR_64SPS:
-			return useconds_t(1000*1000/64);
+			return useconds_t(1000*1000/4);
 		case ADC_DSR_128SPS:
-			return useconds_t(1000*1000/128);
+			return useconds_t(1000*1000/9);
 		case ADC_DSR_250SPS:
-			return useconds_t(1000*1000/250);
+			return useconds_t(1000*1000/14);
 		case ADC_DSR_475SPS:
-			return useconds_t(1000*1000/475);
+			return useconds_t(1000*1000/19);
 		case ADC_DSR_860SPS:
-			return useconds_t(1000*1000/860);
+			return useconds_t(1000*1000/24);
 		default:
 			return useconds_t(1000*1000*5);
 	}
@@ -100,22 +100,22 @@ useconds_t Ads1115c::defineDelay(void)
 uint8_t Ads1115c::defineSamples(void)
 {
 	switch(regDataSampleRate) {
-		case ADC_DSR_8SPS:
+		case ADC_DSR_8SPS: // 8Hz
 			return 1;
-		case ADC_DSR_16SPS:
-			return 2;
-		case ADC_DSR_32SPS:
-			return 4;
-		case ADC_DSR_64SPS:
-			return 8;
-		case ADC_DSR_128SPS:
-			return 16;
-		case ADC_DSR_250SPS:
-			return 31;
-		case ADC_DSR_475SPS:
-			return 59;
-		case ADC_DSR_860SPS:
-			return 107;
+		case ADC_DSR_16SPS: // 5Hz
+			return 3;
+		case ADC_DSR_32SPS: // 10Hz
+			return 3;
+		case ADC_DSR_64SPS: // 12Hz
+			return 5;
+		case ADC_DSR_128SPS: // 12Hz
+			return 10;
+		case ADC_DSR_250SPS: // 16Hz
+			return 15;
+		case ADC_DSR_475SPS: // 20Hz
+			return 20;
+		case ADC_DSR_860SPS: // 30Hz
+			return 25;
 		default:
 			return 0;
 	}
