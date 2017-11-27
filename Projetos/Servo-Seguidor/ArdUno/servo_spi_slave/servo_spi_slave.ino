@@ -46,7 +46,7 @@ void setup (void)
     //----------------------------------------------
     
     s.attach(SERVO);
-    s.write(0);
+    s.write(90);
 
 }  // end of setup
 
@@ -69,7 +69,7 @@ void loop (void)
 {
     if (process_it)
     {
-        pos += buf[0];
+        pos = buf[0] - 20;
         s.write(pos);
         index = 0;
         process_it = false;
