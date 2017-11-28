@@ -39,8 +39,7 @@ typedef enum ADC_MUX {
 	ADC_MUX_AIN0_GND 			= 0x04,
 	ADC_MUX_AIN1_GND 			= 0x05,
 	ADC_MUX_AIN2_GND 			= 0x06,
-	ADC_MUX_AIN3_GND 			= 0x07,
-	ADC_MUX_INVALID				= 0x08
+	ADC_MUX_AIN3_GND 			= 0x07
 } ADC_MUX_e;
 
 // ==============================================================================================================================
