@@ -1,22 +1,40 @@
+#include <iostream>
+
+#include "TimerInterruptHandler.h"
 #include "Ads1115c.h"
 
-#define TEST_CHANNEL ADC_MUX_AIN0_GND
+using namespace std;
 
-int main(int argc, char ** argv)
+Ads1115c_t adc;
+volatile float adcValue;
+volatile bool adcFlag;
+
+int main(int argc, char *argv[])
 {
-	const char * timesStr = argv[1];
-	int times = stoi(argv[1]);
+//	const char * timesStr = argv[1];
+//	int times = stoi(argv[1]);
 
-	cout << "\n ADC TEST" << endl;
-
-	Ads1115c_t adc;
+	cout << "\n ADC INTERRUPT TEST" << endl;
+	
 	adc.set2ReadADC(ADC_MUX_AIN0_GND);
+	adcFlag = false;
+	setInterruptPeriod(200000);
 
-	for(int i = 0; i < times; i++)
+	while(1) 
 	{
-		cout << "Iteracao = " << i + 1 << endl;
-		cout << "Channel read: " << adc.readVoltage() << "V \n";
+		if(adcFlag)
+		{
+			adcFlag = false;			
+			cout << "Channel read: " << adcValue << "V \n";	
+		}	
 	}
 
 	return 0;
 }
+
+void interrupt(void)
+{
+	adcFlag = true;
+	adcValue = adc.readVoltage();
+}
+
