@@ -5,8 +5,8 @@
 // SPI variables
 //----------------------------------------------
 
-int buf [100];        // spi digital buffer
-byte index;           // buffer index
+int buf [1];        // spi digital buffer
+//byte index;           // buffer index
 boolean process_it;   // flag to process data
 
 //----------------------------------------------
@@ -33,7 +33,7 @@ void setup (void)
     SPCR |= _BV(SPE);
 
     // get ready for an interrupt
-    index = 0;   // buffer empty
+//    index = 0;   // buffer empty
     process_it = false;
 
     // now turn on interrupts
@@ -58,7 +58,8 @@ ISR (SPI_STC_vect)
     // add to buffer if room
     if (index < sizeof buf)
     {
-        buf [index++] = c;
+ //       buf [index++] = c;
+        buf [0] = c;
         process_it = true;
     }  // end of room available
 }  // end of interrupt routine SPI_STC_vect
@@ -71,7 +72,7 @@ void loop (void)
         pos = buf[0];
         s.write(pos);
 		SPDR =  pos;
-        index = 0;
+//        index = 0;
         process_it = false;
     }  // end of flag set
 
