@@ -5,9 +5,9 @@
 // SPI variables
 //----------------------------------------------
 
-int buf [100];                // spi digital buffer
-volatile byte index;           // buffer index
-volatile boolean process_it;   // flag to process data
+int buf [100];        // spi digital buffer
+byte index;           // buffer index
+boolean process_it;   // flag to process data
 
 //----------------------------------------------
 // Servo variables
@@ -37,9 +37,7 @@ void setup (void)
     process_it = false;
 
     // now turn on interrupts
-    SPI.attachInterrupt();
-
-    SPDR = 'X';
+    SPI.attachInterrupt();   
    
     //----------------------------------------------
     // Servo Setup
@@ -47,6 +45,7 @@ void setup (void)
     
     s.attach(SERVO);
     s.write(90);
+	SPDR = 90;
 
 }  // end of setup
 
@@ -69,8 +68,9 @@ void loop (void)
 {
     if (process_it)
     {
-        pos = buf[0] - 20;
+        pos = buf[0];
         s.write(pos);
+		SPDR =  pos;
         index = 0;
         process_it = false;
     }  // end of flag set
