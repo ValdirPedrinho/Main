@@ -1,0 +1,1811 @@
+Initializing
+
+
+enviando...0
+buf = 169
+enviando...1
+buf = 0
+enviando...2
+buf = 1
+enviando...3
+buf = 2
+enviando...4
+buf = 3
+enviando...5
+buf = 4
+enviando...6
+buf = 5
+enviando...7
+buf = 6
+enviando...8
+buf = 7
+enviando...9
+buf = 8
+enviando...10
+buf = 9
+enviando...11
+buf = 10
+enviando...12
+buf = 11
+enviando...13
+buf = 12
+enviando...14
+buf = 13
+enviando...15
+buf = 14
+enviando...16
+buf = 15
+enviando...17
+buf = 16
+enviando...18
+buf = 17
+enviando...19
+buf = 18
+enviando...20
+buf = 19
+enviando...21
+buf = 20
+enviando...22
+buf = 21
+enviando...23
+buf = 22
+enviando...24
+buf = 23
+enviando...25
+buf = 24
+enviando...26
+buf = 25
+enviando...27
+buf = 26
+enviando...28
+buf = 27
+enviando...29
+buf = 28
+enviando...30
+buf = 29
+enviando...31
+buf = 30
+enviando...32
+buf = 31
+enviando...33
+buf = 32
+enviando...34
+buf = 33
+enviando...35
+buf = 34
+enviando...36
+buf = 35
+enviando...37
+buf = 36
+enviando...38
+buf = 37
+enviando...39
+buf = 38
+enviando...40
+buf = 39
+enviando...41
+buf = 40
+enviando...42
+buf = 41
+enviando...43
+buf = 42
+enviando...44
+buf = 43
+enviando...45
+buf = 44
+enviando...46
+buf = 45
+enviando...47
+buf = 46
+enviando...48
+buf = 47
+enviando...49
+buf = 48
+enviando...50
+buf = 49
+enviando...51
+buf = 50
+enviando...52
+buf = 51
+enviando...53
+buf = 52
+enviando...54
+buf = 53
+enviando...55
+buf = 54
+enviando...56
+buf = 55
+enviando...57
+buf = 56
+enviando...58
+buf = 57
+enviando...59
+buf = 58
+enviando...60
+buf = 59
+enviando...61
+buf = 60
+enviando...62
+buf = 61
+enviando...63
+buf = 62
+enviando...64
+buf = 63
+enviando...65
+buf = 64
+enviando...66
+buf = 65
+enviando...67
+buf = 66
+enviando...68
+buf = 67
+enviando...69
+buf = 68
+enviando...70
+buf = 69
+enviando...71
+buf = 70
+enviando...72
+buf = 71
+enviando...73
+buf = 72
+enviando...74
+buf = 73
+enviando...75
+buf = 74
+enviando...76
+buf = 75
+enviando...77
+buf = 76
+enviando...78
+buf = 77
+enviando...79
+buf = 78
+enviando...80
+buf = 79
+enviando...81
+buf = 80
+enviando...82
+buf = 81
+enviando...83
+buf = 82
+enviando...84
+buf = 83
+enviando...85
+buf = 84
+enviando...86
+buf = 85
+enviando...87
+buf = 86
+enviando...88
+buf = 87
+enviando...89
+buf = 88
+enviando...90
+buf = 89
+enviando...91
+buf = 90
+enviando...92
+buf = 91
+enviando...93
+buf = 92
+enviando...94
+buf = 93
+enviando...95
+buf = 94
+enviando...96
+buf = 95
+enviando...97
+buf = 96
+enviando...98
+buf = 97
+enviando...99
+buf = 98
+enviando...100
+buf = 99
+enviando...101
+buf = 100
+enviando...102
+buf = 101
+enviando...103
+buf = 102
+enviando...104
+buf = 103
+enviando...105
+buf = 104
+enviando...106
+buf = 105
+enviando...107
+buf = 106
+enviando...108
+buf = 107
+enviando...109
+buf = 108
+enviando...110
+buf = 109
+enviando...111
+buf = 110
+enviando...112
+buf = 111
+enviando...113
+buf = 112
+enviando...114
+buf = 113
+enviando...115
+buf = 114
+enviando...116
+buf = 115
+enviando...117
+buf = 116
+enviando...118
+buf = 117
+enviando...119
+buf = 118
+enviando...120
+buf = 119
+enviando...121
+buf = 120
+enviando...122
+buf = 121
+enviando...123
+buf = 122
+enviando...124
+buf = 123
+enviando...125
+buf = 124
+enviando...126
+buf = 125
+enviando...127
+buf = 126
+enviando...128
+buf = 127
+enviando...129
+buf = 128
+enviando...130
+buf = 129
+enviando...131
+buf = 130
+enviando...132
+buf = 131
+enviando...133
+buf = 132
+enviando...134
+buf = 133
+enviando...135
+buf = 134
+enviando...136
+buf = 135
+enviando...137
+buf = 136
+enviando...138
+buf = 137
+enviando...139
+buf = 138
+enviando...140
+buf = 139
+enviando...141
+buf = 140
+enviando...142
+buf = 141
+enviando...143
+buf = 142
+enviando...144
+buf = 143
+enviando...145
+buf = 144
+enviando...146
+buf = 145
+enviando...147
+buf = 146
+enviando...148
+buf = 147
+enviando...149
+buf = 148
+enviando...150
+buf = 149
+enviando...151
+buf = 150
+enviando...152
+buf = 151
+enviando...153
+buf = 152
+enviando...154
+buf = 153
+enviando...155
+buf = 154
+enviando...156
+buf = 155
+enviando...157
+buf = 156
+enviando...158
+buf = 157
+enviando...159
+buf = 158
+enviando...160
+buf = 159
+enviando...161
+buf = 160
+enviando...162
+buf = 161
+enviando...163
+buf = 162
+enviando...164
+buf = 163
+enviando...165
+buf = 164
+enviando...166
+buf = 165
+enviando...167
+buf = 166
+enviando...168
+buf = 167
+enviando...169
+buf = 168
+enviando...170
+buf = 169
+enviando...171
+buf = 170
+enviando...172
+buf = 171
+enviando...173
+buf = 172
+enviando...174
+buf = 173
+enviando...175
+buf = 174
+enviando...176
+buf = 175
+enviando...177
+buf = 176
+enviando...178
+buf = 177
+enviando...179
+buf = 178
+
+
+enviando...180
+buf = 179
+enviando...179
+buf = 180
+enviando...178
+buf = 179
+enviando...177
+buf = 178
+enviando...176
+buf = 177
+enviando...175
+buf = 176
+enviando...174
+buf = 175
+enviando...173
+buf = 174
+enviando...172
+buf = 173
+enviando...171
+buf = 172
+enviando...170
+buf = 171
+enviando...169
+buf = 170
+enviando...168
+buf = 169
+enviando...167
+buf = 168
+enviando...166
+buf = 167
+enviando...165
+buf = 166
+enviando...164
+buf = 165
+enviando...163
+buf = 164
+enviando...162
+buf = 163
+enviando...161
+buf = 162
+enviando...160
+buf = 161
+enviando...159
+buf = 160
+enviando...158
+buf = 159
+enviando...157
+buf = 158
+enviando...156
+buf = 157
+enviando...155
+buf = 156
+enviando...154
+buf = 155
+enviando...153
+buf = 154
+enviando...152
+buf = 153
+enviando...151
+buf = 152
+enviando...150
+buf = 151
+enviando...149
+buf = 150
+enviando...148
+buf = 149
+enviando...147
+buf = 148
+enviando...146
+buf = 147
+enviando...145
+buf = 146
+enviando...144
+buf = 145
+enviando...143
+buf = 144
+enviando...142
+buf = 143
+enviando...141
+buf = 142
+enviando...140
+buf = 141
+enviando...139
+buf = 140
+enviando...138
+buf = 139
+enviando...137
+buf = 138
+enviando...136
+buf = 137
+enviando...135
+buf = 136
+enviando...134
+buf = 135
+enviando...133
+buf = 134
+enviando...132
+buf = 133
+enviando...131
+buf = 132
+enviando...130
+buf = 131
+enviando...129
+buf = 130
+enviando...128
+buf = 129
+enviando...127
+buf = 128
+enviando...126
+buf = 127
+enviando...125
+buf = 126
+enviando...124
+buf = 125
+enviando...123
+buf = 124
+enviando...122
+buf = 123
+enviando...121
+buf = 122
+enviando...120
+buf = 121
+enviando...119
+buf = 120
+enviando...118
+buf = 119
+enviando...117
+buf = 118
+enviando...116
+buf = 117
+enviando...115
+buf = 116
+enviando...114
+buf = 115
+enviando...113
+buf = 114
+enviando...112
+buf = 113
+enviando...111
+buf = 112
+enviando...110
+buf = 111
+enviando...109
+buf = 110
+enviando...108
+buf = 109
+enviando...107
+buf = 108
+enviando...106
+buf = 107
+enviando...105
+buf = 106
+enviando...104
+buf = 105
+enviando...103
+buf = 104
+enviando...102
+buf = 103
+enviando...101
+buf = 102
+enviando...100
+buf = 101
+enviando...99
+buf = 100
+enviando...98
+buf = 99
+enviando...97
+buf = 98
+enviando...96
+buf = 97
+enviando...95
+buf = 96
+enviando...94
+buf = 95
+enviando...93
+buf = 94
+enviando...92
+buf = 93
+enviando...91
+buf = 92
+enviando...90
+buf = 91
+enviando...89
+buf = 90
+enviando...88
+buf = 89
+enviando...87
+buf = 88
+enviando...86
+buf = 87
+enviando...85
+buf = 86
+enviando...84
+buf = 85
+enviando...83
+buf = 84
+enviando...82
+buf = 83
+enviando...81
+buf = 82
+enviando...80
+buf = 81
+enviando...79
+buf = 80
+enviando...78
+buf = 79
+enviando...77
+buf = 78
+enviando...76
+buf = 77
+enviando...75
+buf = 76
+enviando...74
+buf = 75
+enviando...73
+buf = 74
+enviando...72
+buf = 73
+enviando...71
+buf = 72
+enviando...70
+buf = 71
+enviando...69
+buf = 70
+enviando...68
+buf = 69
+enviando...67
+buf = 68
+enviando...66
+buf = 67
+enviando...65
+buf = 66
+enviando...64
+buf = 65
+enviando...63
+buf = 64
+enviando...62
+buf = 63
+enviando...61
+buf = 62
+enviando...60
+buf = 61
+enviando...59
+buf = 60
+enviando...58
+buf = 59
+enviando...57
+buf = 58
+enviando...56
+buf = 57
+enviando...55
+buf = 56
+enviando...54
+buf = 55
+enviando...53
+buf = 54
+enviando...52
+buf = 53
+enviando...51
+buf = 52
+enviando...50
+buf = 51
+enviando...49
+buf = 50
+enviando...48
+buf = 49
+enviando...47
+buf = 48
+enviando...46
+buf = 47
+enviando...45
+buf = 46
+enviando...44
+buf = 45
+enviando...43
+buf = 44
+enviando...42
+buf = 43
+enviando...41
+buf = 42
+enviando...40
+buf = 41
+enviando...39
+buf = 40
+enviando...38
+buf = 39
+enviando...37
+buf = 38
+enviando...36
+buf = 37
+enviando...35
+buf = 36
+enviando...34
+buf = 35
+enviando...33
+buf = 34
+enviando...32
+buf = 33
+enviando...31
+buf = 32
+enviando...30
+buf = 31
+enviando...29
+buf = 30
+enviando...28
+buf = 29
+enviando...27
+buf = 28
+enviando...26
+buf = 27
+enviando...25
+buf = 26
+enviando...24
+buf = 25
+enviando...23
+buf = 24
+enviando...22
+buf = 23
+enviando...21
+buf = 22
+enviando...20
+buf = 21
+enviando...19
+buf = 20
+enviando...18
+buf = 19
+enviando...17
+buf = 18
+enviando...16
+buf = 17
+enviando...15
+buf = 16
+enviando...14
+buf = 15
+enviando...13
+buf = 14
+enviando...12
+buf = 13
+enviando...11
+buf = 12
+enviando...10
+buf = 11
+enviando...9
+buf = 10
+enviando...8
+buf = 9
+enviando...7
+buf = 8
+enviando...6
+buf = 7
+enviando...5
+buf = 6
+enviando...4
+buf = 5
+enviando...3
+buf = 4
+enviando...2
+buf = 3
+enviando...1
+buf = 2
+
+
+enviando...0
+buf = 1
+enviando...1
+buf = 0
+enviando...2
+buf = 1
+enviando...3
+buf = 2
+enviando...4
+buf = 3
+enviando...5
+buf = 4
+enviando...6
+buf = 5
+enviando...7
+buf = 6
+enviando...8
+buf = 7
+enviando...9
+buf = 8
+enviando...10
+buf = 9
+enviando...11
+buf = 10
+enviando...12
+buf = 11
+enviando...13
+buf = 12
+enviando...14
+buf = 13
+enviando...15
+buf = 14
+enviando...16
+buf = 15
+enviando...17
+buf = 16
+enviando...18
+buf = 17
+enviando...19
+buf = 18
+enviando...20
+buf = 19
+enviando...21
+buf = 20
+enviando...22
+buf = 21
+enviando...23
+buf = 22
+enviando...24
+buf = 23
+enviando...25
+buf = 24
+enviando...26
+buf = 25
+enviando...27
+buf = 26
+enviando...28
+buf = 27
+enviando...29
+buf = 28
+enviando...30
+buf = 29
+enviando...31
+buf = 30
+enviando...32
+buf = 31
+enviando...33
+buf = 32
+enviando...34
+buf = 33
+enviando...35
+buf = 34
+enviando...36
+buf = 35
+enviando...37
+buf = 36
+enviando...38
+buf = 37
+enviando...39
+buf = 38
+enviando...40
+buf = 39
+enviando...41
+buf = 40
+enviando...42
+buf = 41
+enviando...43
+buf = 42
+enviando...44
+buf = 43
+enviando...45
+buf = 44
+enviando...46
+buf = 45
+enviando...47
+buf = 46
+enviando...48
+buf = 47
+enviando...49
+buf = 48
+enviando...50
+buf = 49
+enviando...51
+buf = 50
+enviando...52
+buf = 51
+enviando...53
+buf = 52
+enviando...54
+buf = 53
+enviando...55
+buf = 54
+enviando...56
+buf = 55
+enviando...57
+buf = 56
+enviando...58
+buf = 57
+enviando...59
+buf = 58
+enviando...60
+buf = 59
+enviando...61
+buf = 60
+enviando...62
+buf = 61
+enviando...63
+buf = 62
+enviando...64
+buf = 63
+enviando...65
+buf = 64
+enviando...66
+buf = 65
+enviando...67
+buf = 66
+enviando...68
+buf = 67
+enviando...69
+buf = 68
+enviando...70
+buf = 69
+enviando...71
+buf = 70
+enviando...72
+buf = 71
+enviando...73
+buf = 72
+enviando...74
+buf = 73
+enviando...75
+buf = 74
+enviando...76
+buf = 75
+enviando...77
+buf = 76
+enviando...78
+buf = 77
+enviando...79
+buf = 78
+enviando...80
+buf = 79
+enviando...81
+buf = 80
+enviando...82
+buf = 81
+enviando...83
+buf = 82
+enviando...84
+buf = 83
+enviando...85
+buf = 84
+enviando...86
+buf = 85
+enviando...87
+buf = 86
+enviando...88
+buf = 87
+enviando...89
+buf = 88
+enviando...90
+buf = 89
+enviando...91
+buf = 90
+enviando...92
+buf = 91
+enviando...93
+buf = 92
+enviando...94
+buf = 93
+enviando...95
+buf = 94
+enviando...96
+buf = 95
+enviando...97
+buf = 96
+enviando...98
+buf = 97
+enviando...99
+buf = 98
+enviando...100
+buf = 99
+enviando...101
+buf = 100
+enviando...102
+buf = 101
+enviando...103
+buf = 102
+enviando...104
+buf = 103
+enviando...105
+buf = 104
+enviando...106
+buf = 105
+enviando...107
+buf = 106
+enviando...108
+buf = 107
+enviando...109
+buf = 108
+enviando...110
+buf = 109
+enviando...111
+buf = 110
+enviando...112
+buf = 111
+enviando...113
+buf = 112
+enviando...114
+buf = 113
+enviando...115
+buf = 114
+enviando...116
+buf = 115
+enviando...117
+buf = 116
+enviando...118
+buf = 117
+enviando...119
+buf = 118
+enviando...120
+buf = 119
+enviando...121
+buf = 120
+enviando...122
+buf = 121
+enviando...123
+buf = 122
+enviando...124
+buf = 123
+enviando...125
+buf = 124
+enviando...126
+buf = 125
+enviando...127
+buf = 126
+enviando...128
+buf = 127
+enviando...129
+buf = 128
+enviando...130
+buf = 129
+enviando...131
+buf = 130
+enviando...132
+buf = 131
+enviando...133
+buf = 132
+enviando...134
+buf = 133
+enviando...135
+buf = 134
+enviando...136
+buf = 135
+enviando...137
+buf = 136
+enviando...138
+buf = 137
+enviando...139
+buf = 138
+enviando...140
+buf = 139
+enviando...141
+buf = 140
+enviando...142
+buf = 141
+enviando...143
+buf = 142
+enviando...144
+buf = 143
+enviando...145
+buf = 144
+enviando...146
+buf = 145
+enviando...147
+buf = 146
+enviando...148
+buf = 147
+enviando...149
+buf = 148
+enviando...150
+buf = 149
+enviando...151
+buf = 150
+enviando...152
+buf = 151
+enviando...153
+buf = 152
+enviando...154
+buf = 153
+enviando...155
+buf = 154
+enviando...156
+buf = 155
+enviando...157
+buf = 156
+enviando...158
+buf = 157
+enviando...159
+buf = 158
+enviando...160
+buf = 159
+enviando...161
+buf = 160
+enviando...162
+buf = 161
+enviando...163
+buf = 162
+enviando...164
+buf = 163
+enviando...165
+buf = 164
+enviando...166
+buf = 165
+enviando...167
+buf = 166
+enviando...168
+buf = 167
+enviando...169
+buf = 168
+enviando...170
+buf = 169
+enviando...171
+buf = 170
+enviando...172
+buf = 171
+enviando...173
+buf = 172
+enviando...174
+buf = 173
+enviando...175
+buf = 174
+enviando...176
+buf = 175
+enviando...177
+buf = 176
+enviando...178
+buf = 177
+enviando...179
+buf = 178
+
+
+enviando...180
+buf = 179
+enviando...179
+buf = 180
+enviando...178
+buf = 179
+enviando...177
+buf = 178
+enviando...176
+buf = 177
+enviando...175
+buf = 176
+enviando...174
+buf = 175
+enviando...173
+buf = 174
+enviando...172
+buf = 173
+enviando...171
+buf = 172
+enviando...170
+buf = 171
+enviando...169
+buf = 170
+enviando...168
+buf = 169
+enviando...167
+buf = 168
+enviando...166
+buf = 167
+enviando...165
+buf = 166
+enviando...164
+buf = 165
+enviando...163
+buf = 164
+enviando...162
+buf = 163
+enviando...161
+buf = 162
+enviando...160
+buf = 161
+enviando...159
+buf = 160
+enviando...158
+buf = 159
+enviando...157
+buf = 158
+enviando...156
+buf = 157
+enviando...155
+buf = 156
+enviando...154
+buf = 155
+enviando...153
+buf = 154
+enviando...152
+buf = 153
+enviando...151
+buf = 152
+enviando...150
+buf = 151
+enviando...149
+buf = 150
+enviando...148
+buf = 149
+enviando...147
+buf = 148
+enviando...146
+buf = 147
+enviando...145
+buf = 146
+enviando...144
+buf = 145
+enviando...143
+buf = 144
+enviando...142
+buf = 143
+enviando...141
+buf = 142
+enviando...140
+buf = 141
+enviando...139
+buf = 140
+enviando...138
+buf = 139
+enviando...137
+buf = 138
+enviando...136
+buf = 137
+enviando...135
+buf = 136
+enviando...134
+buf = 135
+enviando...133
+buf = 134
+enviando...132
+buf = 133
+enviando...131
+buf = 132
+enviando...130
+buf = 131
+enviando...129
+buf = 130
+enviando...128
+buf = 129
+enviando...127
+buf = 128
+enviando...126
+buf = 127
+enviando...125
+buf = 126
+enviando...124
+buf = 125
+enviando...123
+buf = 124
+enviando...122
+buf = 123
+enviando...121
+buf = 122
+enviando...120
+buf = 121
+enviando...119
+buf = 120
+enviando...118
+buf = 119
+enviando...117
+buf = 118
+enviando...116
+buf = 117
+enviando...115
+buf = 116
+enviando...114
+buf = 115
+enviando...113
+buf = 114
+enviando...112
+buf = 113
+enviando...111
+buf = 112
+enviando...110
+buf = 111
+enviando...109
+buf = 110
+enviando...108
+buf = 109
+enviando...107
+buf = 108
+enviando...106
+buf = 107
+enviando...105
+buf = 106
+enviando...104
+buf = 105
+enviando...103
+buf = 104
+enviando...102
+buf = 103
+enviando...101
+buf = 102
+enviando...100
+buf = 101
+enviando...99
+buf = 100
+enviando...98
+buf = 99
+enviando...97
+buf = 98
+enviando...96
+buf = 97
+enviando...95
+buf = 96
+enviando...94
+buf = 95
+enviando...93
+buf = 94
+enviando...92
+buf = 93
+enviando...91
+buf = 92
+enviando...90
+buf = 91
+enviando...89
+buf = 90
+enviando...88
+buf = 89
+enviando...87
+buf = 88
+enviando...86
+buf = 87
+enviando...85
+buf = 86
+enviando...84
+buf = 85
+enviando...83
+buf = 84
+enviando...82
+buf = 83
+enviando...81
+buf = 82
+enviando...80
+buf = 81
+enviando...79
+buf = 80
+enviando...78
+buf = 79
+enviando...77
+buf = 78
+enviando...76
+buf = 77
+enviando...75
+buf = 76
+enviando...74
+buf = 75
+enviando...73
+buf = 74
+enviando...72
+buf = 73
+enviando...71
+buf = 72
+enviando...70
+buf = 71
+enviando...69
+buf = 70
+enviando...68
+buf = 69
+enviando...67
+buf = 68
+enviando...66
+buf = 67
+enviando...65
+buf = 66
+enviando...64
+buf = 65
+enviando...63
+buf = 64
+enviando...62
+buf = 63
+enviando...61
+buf = 62
+enviando...60
+buf = 61
+enviando...59
+buf = 60
+enviando...58
+buf = 59
+enviando...57
+buf = 58
+enviando...56
+buf = 57
+enviando...55
+buf = 56
+enviando...54
+buf = 55
+enviando...53
+buf = 54
+enviando...52
+buf = 53
+enviando...51
+buf = 52
+enviando...50
+buf = 51
+enviando...49
+buf = 50
+enviando...48
+buf = 49
+enviando...47
+buf = 48
+enviando...46
+buf = 47
+enviando...45
+buf = 46
+enviando...44
+buf = 45
+enviando...43
+buf = 44
+enviando...42
+buf = 43
+enviando...41
+buf = 42
+enviando...40
+buf = 41
+enviando...39
+buf = 40
+enviando...38
+buf = 39
+enviando...37
+buf = 38
+enviando...36
+buf = 37
+enviando...35
+buf = 36
+enviando...34
+buf = 35
+enviando...33
+buf = 34
+enviando...32
+buf = 33
+enviando...31
+buf = 32
+enviando...30
+buf = 31
+enviando...29
+buf = 30
+enviando...28
+buf = 29
+enviando...27
+buf = 28
+enviando...26
+buf = 27
+enviando...25
+buf = 26
+enviando...24
+buf = 25
+enviando...23
+buf = 24
+enviando...22
+buf = 23
+enviando...21
+buf = 22
+enviando...20
+buf = 21
+enviando...19
+buf = 20
+enviando...18
+buf = 19
+enviando...17
+buf = 18
+enviando...16
+buf = 17
+enviando...15
+buf = 16
+enviando...14
+buf = 15
+enviando...13
+buf = 14
+enviando...12
+buf = 13
+enviando...11
+buf = 12
+enviando...10
+buf = 11
+enviando...9
+buf = 10
+enviando...8
+buf = 9
+enviando...7
+buf = 8
+enviando...6
+buf = 7
+enviando...5
+buf = 6
+enviando...4
+buf = 5
+enviando...3
+buf = 4
+enviando...2
+buf = 3
+enviando...1
+buf = 2
+
+
+enviando...0
+buf = 1
+enviando...1
+buf = 0
+enviando...2
+buf = 1
+enviando...3
+buf = 2
+enviando...4
+buf = 3
+enviando...5
+buf = 4
+enviando...6
+buf = 5
+enviando...7
+buf = 6
+enviando...8
+buf = 7
+enviando...9
+buf = 8
+enviando...10
+buf = 9
+enviando...11
+buf = 10
+enviando...12
+buf = 11
+enviando...13
+buf = 12
+enviando...14
+buf = 13
+enviando...15
+buf = 14
+enviando...16
+buf = 15
+enviando...17
+buf = 16
+enviando...18
+buf = 17
+enviando...19
+buf = 18
+enviando...20
+buf = 19
+enviando...21
+buf = 20
+enviando...22
+buf = 21
+enviando...23
+buf = 22
+enviando...24
+buf = 23
+enviando...25
+buf = 24
+enviando...26
+buf = 25
+enviando...27
+buf = 26
+enviando...28
+buf = 27
+enviando...29
+buf = 28
+enviando...30
+buf = 29
+enviando...31
+buf = 30
+enviando...32
+buf = 31
+enviando...33
+buf = 32
+enviando...34
+buf = 33
+enviando...35
+buf = 34
+enviando...36
+buf = 35
+enviando...37
+buf = 36
+enviando...38
+buf = 37
+enviando...39
+buf = 38
+enviando...40
+buf = 39
+enviando...41
+buf = 40
+enviando...42
+buf = 41
+enviando...43
+buf = 42
+enviando...44
+buf = 43
+enviando...45
+buf = 44
+enviando...46
+buf = 45
+enviando...47
+buf = 46
+enviando...48
+buf = 47
+enviando...49
+buf = 48
+enviando...50
+buf = 49
+enviando...51
+buf = 50
+enviando...52
+buf = 51
+enviando...53
+buf = 52
+enviando...54
+buf = 53
+enviando...55
+buf = 54
+enviando...56
+buf = 55
+enviando...57
+buf = 56
+enviando...58
+buf = 57
+enviando...59
+buf = 58
+enviando...60
+buf = 59
+enviando...61
+buf = 60
+enviando...62
+buf = 61
+enviando...63
+buf = 62
+enviando...64
+buf = 63
+enviando...65
+buf = 64
+enviando...66
+buf = 65
+enviando...67
+buf = 66
+enviando...68
+buf = 67
+enviando...69
+buf = 68
+enviando...70
+buf = 69
+enviando...71
+buf = 70
+enviando...72
+buf = 71
+enviando...73
+buf = 72
+enviando...74
+buf = 73
+enviando...75
+buf = 74
+enviando...76
+buf = 75
+enviando...77
+buf = 76
+enviando...78
+buf = 77
+enviando...79
+buf = 78
+enviando...80
+buf = 79
+enviando...81
+buf = 80
+enviando...82
+buf = 81
+enviando...83
+buf = 82
+enviando...84
+buf = 83
+enviando...85
+buf = 84
+enviando...86
+buf = 85
+enviando...87
+buf = 86
+enviando...88
+buf = 87
+enviando...89
+buf = 88
+enviando...90
+buf = 89
+enviando...91
+buf = 90
+enviando...92
+buf = 91
+enviando...93
+buf = 92
+enviando...94
+buf = 93
+enviando...95
+buf = 94
+enviando...96
+buf = 95
+enviando...97
+buf = 96
+enviando...98
+buf = 97
+enviando...99
+buf = 98
+enviando...100
+buf = 99
+enviando...101
+buf = 100
+enviando...102
+buf = 101
+enviando...103
+buf = 102
+enviando...104
+buf = 103
+enviando...105
+buf = 104
+enviando...106
+buf = 105
+enviando...107
+buf = 106
+enviando...108
+buf = 107
+enviando...109
+buf = 108
+enviando...110
+buf = 109
+enviando...111
+buf = 110
+enviando...112
+buf = 111
+enviando...113
+buf = 112
+enviando...114
+buf = 113
+enviando...115
+buf = 114
+enviando...116
+buf = 115
+enviando...117
+buf = 116
+enviando...118
+buf = 117
+enviando...119
+buf = 118
+enviando...120
+buf = 119
+enviando...121
+buf = 120
+enviando...122
+buf = 121
+enviando...123
+buf = 122
+enviando...124
+buf = 123
+enviando...125
+buf = 124
+enviando...126
+buf = 125
+enviando...127
+buf = 126
+enviando...128
+buf = 127
+enviando...129
+buf = 128
+enviando...130
+buf = 129
+enviando...131
+buf = 130
+enviando...132
+buf = 131
+enviando...133
+buf = 132
+enviando...134
+buf = 133
+enviando...135
+buf = 134
+enviando...136
+buf = 135
+enviando...137
+buf = 136
+enviando...138
+buf = 137
+enviando...139
+buf = 138
+enviando...140
+buf = 139
+enviando...141
+buf = 140
+enviando...142
+buf = 141
+enviando...143
+buf = 142
+enviando...144
+buf = 143
+enviando...145
+buf = 144
+enviando...146
+buf = 145
+enviando...147
+buf = 146
+enviando...148
+buf = 147
+enviando...149
+buf = 148
+enviando...150
+buf = 149
+enviando...151
+buf = 150
+enviando...152
+buf = 151
+enviando...153
+buf = 152
+enviando...154
+buf = 153
+enviando...155
+buf = 154
+enviando...156
+buf = 155
+enviando...157
+buf = 156
+enviando...158
+buf = 157
+enviando...159
+buf = 158
+enviando...160
+buf = 159
+enviando...161
+buf = 160
+enviando...162
+buf = 161
+enviando...163
+buf = 162
+enviando...164
+buf = 163
+enviando...165
+buf = 164
+enviando...166
+buf = 165
+enviando...167
+buf = 166
+enviando...168
+buf = 167
+enviando...169
+buf = 168
+enviando...170
+buf = 169
+enviando...171
+buf = 170
+enviando...172
+buf = 171
+enviando...173
+buf = 172
+enviando...174
+buf = 173
+enviando...175
+buf = 174
+enviando...176
+buf = 175
+enviando...177
+buf = 176
+enviando...178
+buf = 177
+enviando...179
+buf = 178

@@ -23,7 +23,8 @@ int main(void)
     while(true)
     {
 		sleep(5);
-        for(int i = 10; i <= 190; i++)
+		cout << endl << endl;
+        for(int i = 0; i < 180; i++)
         {
             cout << "enviando..." << i << endl;
             buffer[0] = i;
@@ -34,11 +35,12 @@ int main(void)
                 cout << "SPI error";
                 return -1;
             }
-            cout << "buf = " << buffer[0] << endl;
+            cout << "buf = " << int (buffer[0]) << endl;
             usleep(5000);
         }
         sleep(5);
-        for(int i = 190; i >=10; i--)
+		cout << endl << endl;
+        for(int i = 180; i >0; i--)
         {
 
             cout << "enviando..." << i << endl;
@@ -50,7 +52,7 @@ int main(void)
                 cout << "SPI error";
                 return -1;
             }
-            cout << "buf = " << buffer[0] << endl;
+            cout << "buf = " << int (buffer[0]) << endl;
             usleep(5000);
         }
     }

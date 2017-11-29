@@ -1,79 +1,57 @@
 #include <SPI.h>
 #include <Servo.h>
 
-//----------------------------------------------
-// SPI variables
-//----------------------------------------------
+//==============================================
+// Variaveis da SPI
+//==============================================
 
-int buf [1];        // spi digital buffer
-//byte index;           // buffer index
-boolean process_it;   // flag to process data
+char buf [1];           // SPI buffer
+boolean process_it;     // Flag para processar a interrupcao
 
-//----------------------------------------------
-// Servo variables
-//----------------------------------------------
+//==============================================
+// Variaveis do Servo Motor
+//==============================================
 
 #define SERVO 6
 
-Servo s; // servo handler
-int pos; // servo position
+Servo s; // Objeto servo
+int pos; // Posicao do servo
 
 void setup (void)
 {
-//    Serial.begin (115200);   // debugging
-
-    //----------------------------------------------
+    //==============================================
     // SPI Setup
-    //----------------------------------------------
+    //==============================================
 
-    // have to send on master in, *slave out*
-    pinMode(MISO, OUTPUT);
-
-    // turn on SPI in slave mode
-    SPCR |= _BV(SPE);
-
-    // get ready for an interrupt
-//    index = 0;   // buffer empty
+    pinMode(MISO, OUTPUT);   // Configura a porta MISO como saida (p/ usar como escravo)
+    SPCR |= _BV(SPE);        // Configura o registrador SPCR para modo escravo
     process_it = false;
-
-    // now turn on interrupts
-    SPI.attachInterrupt();   
+    SPI.attachInterrupt();   // Habilita a interrupcao
    
-    //----------------------------------------------
+    //==============================================
     // Servo Setup
-    //----------------------------------------------
+    //==============================================
     
-    s.attach(SERVO);
-    s.write(90);
-	SPDR = 90;
+    s.attach(SERVO);  // Especifica em que pino o canal PWM do servo esta
+    s.write(90);      // Coloca na posicao inical de 90 (barra alinhada com o servo)
+    SPDR = 90;        // Coloca no registrador de dados (buffer) da SPI a posicao atual
+}
 
-}  // end of setup
-
-
-// SPI interrupt routine
+// Rotina de interrupcao
+// Tratada quando chegam dados pela SPI
 ISR (SPI_STC_vect)
 {
-    byte c = SPDR;  // grab byte from SPI Data Register
+    pos = SPDR;          // Atualiza a posicao para o solicitado pela SPI
+    process_it = true;   // Habilita a flag para que o servo seja acionado
+}
 
-    // add to buffer if room
-    if (index < sizeof buf)
-    {
- //       buf [index++] = c;
-        buf [0] = c;
-        process_it = true;
-    }  // end of room available
-}  // end of interrupt routine SPI_STC_vect
-
-// main loop - wait for flag set in interrupt routine
 void loop (void)
 {
     if (process_it)
     {
-        pos = buf[0];
-        s.write(pos);
-		SPDR =  pos;
-//        index = 0;
-        process_it = false;
-    }  // end of flag set
+        s.write(pos);        // Aciona o servo para a nova posicao
+        SPDR =  pos;         // Coloca no registrador de dados (buffer) da SPI a posicao atual 
+        process_it = false;  // Desabilita a flag
+    }
 
-} // end of loop
+}
