@@ -9,15 +9,16 @@ Ads1115c::Ads1115c(int address, ADC_TYPE_t adcType)
 {
 	i2cStart();
 
+	numSamples = 10;
+
 	config();
 
 	if(adcType == ADC_4to20mA) {
-		for(int i = 0; i <  8; i++) {	
-			channels[i].regGain = ADC_FS_2V048;		
+		for(int i = 0; i <  8; i++) {
+			channels[i].regGain = ADC_FS_2V048;
 		}
 	}
 }
-
 
 Ads1115c::~Ads1115c(void)
 {
@@ -51,17 +52,17 @@ void Ads1115c::i2cStart(void)
 		errorReg = ADC_I2C_COULDNT_CONNECT;
 		i2cClose();
 		return;
-	}	
+	}
 
 	readBuf[0] = 0x00;
-	
-	if(read(i2c_fd, readBuf, 2) < 0) {			
+
+	if(read(i2c_fd, readBuf, 2) < 0) {
 		cout << "ADC Error: Couldn't communicate" << endl;
 		errorReg = ADC_I2C_COULDNT_READ;
 		i2cClose();
 		return;
 	}
-	
+
 	errorReg = ADC_IS_FINE;
 }
 
@@ -70,54 +71,30 @@ void Ads1115c::i2cClose(void)
 	if(i2c_fd) { 				//If handle is open
 		close(i2c_fd);
 	}
-	i2c_fd = 0;	
+	i2c_fd = 0;
 }
 
-useconds_t Ads1115c::defineDelay(void) 
+useconds_t Ads1115c::defineDelay(void)
 {
 	switch(regDataSampleRate) {
 		case ADC_DSR_8SPS:
-			return useconds_t(1000*1000/1);
+			return useconds_t(1000*1000/7);
 		case ADC_DSR_16SPS:
-			return useconds_t(1000*1000/2);
+			return useconds_t(1000*1000/15);
 		case ADC_DSR_32SPS:
-			return useconds_t(1000*1000/2);
+			return useconds_t(1000*1000/30);
 		case ADC_DSR_64SPS:
-			return useconds_t(1000*1000/4);
+			return useconds_t(1000*1000/60);
 		case ADC_DSR_128SPS:
-			return useconds_t(1000*1000/9);
+			return useconds_t(1000*1000/125);
 		case ADC_DSR_250SPS:
-			return useconds_t(1000*1000/14);
+			return useconds_t(1000*1000/245);
 		case ADC_DSR_475SPS:
-			return useconds_t(1000*1000/19);
+			return useconds_t(1000*1000/470);
 		case ADC_DSR_860SPS:
-			return useconds_t(1000*1000/24);
+			return useconds_t(1000*1000/850);
 		default:
 			return useconds_t(1000*1000*5);
-	}
-}
-
-uint8_t Ads1115c::defineSamples(void)
-{
-	switch(regDataSampleRate) {
-		case ADC_DSR_8SPS: // 8Hz
-			return 1;
-		case ADC_DSR_16SPS: // 5Hz
-			return 3;
-		case ADC_DSR_32SPS: // 10Hz
-			return 3;
-		case ADC_DSR_64SPS: // 12Hz
-			return 5;
-		case ADC_DSR_128SPS: // 12Hz
-			return 10;
-		case ADC_DSR_250SPS: // 16Hz
-			return 15;
-		case ADC_DSR_475SPS: // 20Hz
-			return 20;
-		case ADC_DSR_860SPS: // 30Hz
-			return 25;
-		default:
-			return 0;
 	}
 }
 
@@ -135,6 +112,13 @@ void Ads1115c::config (ADC_OS_e os, ADC_MODE_e mode, ADC_DSR_e sampleRate, ADC_C
 		channels[i].avgValue = 0;
 		channels[i].sum = 0;
 	}
+
+	settedChannel = ADC_MUX_INVALID;
+}
+
+void Ads1115c::setNumSamplesPerRead(uint8_t samples)
+{
+    numSamples = (samples > 100)? 100 : samples;
 }
 
 void Ads1115c::setGain(ADC_MUX_e channel, ADC_FS_e gain)
@@ -159,7 +143,7 @@ float Ads1115c::getGainValue(ADC_MUX_e channel)
 			return float (0.256);
 		default:
 			return float (ADC_INVALID_VALUE);
-	}	
+	}
 }
 
 int16_t Ads1115c::getAvgValue(ADC_MUX_e channel) {
@@ -174,25 +158,24 @@ ADC_CHANNEL_ERROR_t  Ads1115c::getChannelError(ADC_MUX_e channel) {
 	return channels[int (channel)].errorReg;
 }
 
-void Ads1115c::readADC(ADC_MUX_e channel) 
+void Ads1115c::set2ReadADC(ADC_MUX_e channel)
 {
-	adcMutex.lock();	
-	
-	// try connect
+	adcMutex.lock();
+
+	settedChannel = channel;
+
+	// try reconnect
 	if(errorReg != ADC_IS_FINE) {
 		i2cStart();
 	}
-	
+
 	// abort
-	if(errorReg != ADC_IS_FINE) {		
-		channels[int (channel)].avgValue = uint16_t (ADC_INVALID_VALUE);
+	if(errorReg != ADC_IS_FINE) {
 		adcMutex.unlock();
 		return;
-	}	
-	
-	writeBuf[0] = 1; // config to access write register
+	}
 
-	uint8_t samples = defineSamples();	
+	writeBuf[0] = 1; // config to access write register
 																			// read/write register bit
 	writeBuf[1] = regOS;													// Bit[15]
 	writeBuf[1] = (writeBuf[1] << 3) | int (channel);						// Bit[14:12]
@@ -205,65 +188,72 @@ void Ads1115c::readADC(ADC_MUX_e channel)
 	writeBuf[2] = (writeBuf[2] << 1) | regLatchingComparator;				// Bit[2]
 	writeBuf[2] = (writeBuf[2] << 2) | regComparatorQueue;					// Bit[1:0]
 
-	// begin conversion
 	if(write(i2c_fd, writeBuf, 3) < 0) {
-		cout << "Error in First if: Couldn't write to register select and/or read/writer register of ADC" << endl;
+		cout << "Error: Couldn't write to register select and/or read/writer register of ADC" << endl;
 		errorReg = ADC_I2C_COULDNT_WRITE;
 		i2cClose();
 		adcMutex.unlock();
 		return;
+	}	
+
+	usleep(useconds_t(50*1000));
+
+	adcMutex.unlock();
+}
+
+void Ads1115c::readADC(void)
+{
+	adcMutex.lock();
+
+	if(settedChannel == ADC_MUX_INVALID)
+	{
+		cout << "Error: No channel selected" << endl;
+		return;
 	}
+	ADC_MUX_e channel = settedChannel;
+
+	if(errorReg != ADC_IS_FINE) {
+		set2ReadADC(channel);
+	}
+
+	channels[int (channel)].sum = 0;
 
 	useconds_t delay = defineDelay();
+	uint8_t samples = numSamples;
 
-	usleep(2*delay);
-
-	// config to access read register
-	readBuf[0] = 0;
-	if(write(i2c_fd, readBuf, 1) < 0) {
-		cout << "Error in Second if: Couldn't write register select of ADC" << endl;
-		errorReg = ADC_I2C_COULDNT_WRITE;
-		i2cClose();
-		adcMutex.unlock();
-		return;
-	}
-
-	channels[int (channel)].sum = 0;			
-
-	for(int j = 0; j < samples; j++) 
+	for(int j = 0; j < samples; j++)
 	{
+
+		// config to access read register
+		readBuf[0] = 0;
+		if(write(i2c_fd, readBuf, 1) < 0) {
+			cout << "Error: Couldn't write register select of ADC" << endl;
+			errorReg = ADC_I2C_COULDNT_WRITE;
+			i2cClose();
+			adcMutex.unlock();
+			return;
+		}
+
 		// read conversion register
-		if(read(i2c_fd, readBuf, 2) < 0) {		
-			cout << "Error in Third if: Couldn't read ADC conversion" << endl;
+		if(read(i2c_fd, readBuf, 2) < 0) {
+			cout << "Error: Couldn't read ADC conversion" << endl;
 			errorReg = ADC_I2C_COULDNT_READ;
 			i2cClose();
 			adcMutex.unlock();
 			return;
 		}
 
-		// to remove noise
-//		readBuf[1] = readBuf[1] >> 2;
-//		readBuf[1] = readBuf[1] << 2;
-
 		channels[int (channel)].samplesArray[j] = int16_t (readBuf[0] << 8 | readBuf[1]);
 		channels[int (channel)].sum += int32_t (channels[int (channel)].samplesArray[j]);
 
-		usleep(delay);		
+		usleep(delay);
 
 	} // end for
 
 	channels[int (channel)].errorReg = ADC_CHANNEL_IS_FINE;
+	channels[int (channel)].avgValue = int16_t (channels[int (channel)].sum/samples);	
 
-	channels[int (channel)].avgValue = int16_t (channels[int (channel)].sum/samples);
-	int32_t sumAux = 0;
-
-	for(int j = 0; j < samples; j++) {		
-		channels[int (channel)].samplesArray[j] -= channels[int (channel)].avgValue;
-		channels[int (channel)].samplesArray[j] = (channels[int (channel)].samplesArray[j])*(channels[int (channel)].samplesArray[j]);
-		sumAux += channels[int (channel)].samplesArray[j];
-	}
-
-	float stdDeviation = sqrt(sumAux/(samples-1));
+	// check if there are errors
 
 	if(channels[int (channel)].avgValue < int16_t (UNDER_ZERO_LIMIT)) {
 		channels[int (channel)].avgValue = uint16_t (ADC_INVALID_VALUE);
@@ -272,20 +262,29 @@ void Ads1115c::readADC(ADC_MUX_e channel)
 	else if(channels[int (channel)].avgValue < 0) {
 		channels[int (channel)].avgValue = 0;
 	}
-	
+
+	int32_t sumAux = 0;
+	for(int j = 0; j < samples; j++) {
+		channels[int (channel)].samplesArray[j] -= channels[int (channel)].avgValue;
+		channels[int (channel)].samplesArray[j] = (channels[int (channel)].samplesArray[j])*(channels[int (channel)].samplesArray[j]);
+		sumAux += channels[int (channel)].samplesArray[j];
+	}
+
+	float stdDeviation = sqrt(sumAux/(samples-1));
+
 	if(stdDeviation >= MAX_STD_DEVIATION) {
 		channels[int (channel)].avgValue = uint16_t (ADC_INVALID_VALUE);
 		channels[int (channel)].errorReg = ADC_CHANNEL_OVER_MAX_STD_DEVIATION;
 	}
-	
-	channels[int (channel)].errorReg = ADC_CHANNEL_IS_FINE;
-	
-	adcMutex.unlock();	
+
+	adcMutex.unlock();
 }
 
-float Ads1115c::readVoltage(ADC_MUX_e channel)
+float Ads1115c::readVoltage(void)
 {
-	readADC(channel);
+	ADC_MUX_e channel = settedChannel;
+
+	readADC();
 
 	if(getChannelError(channel) != ADC_CHANNEL_IS_FINE) {
 		cout << "readVoltage error" << endl;
@@ -295,9 +294,11 @@ float Ads1115c::readVoltage(ADC_MUX_e channel)
 	return float (channels[int (channel)].avgValue * ((getGainValue(channel))/32768.0));
 }
 
-float Ads1115c::readVoltageSensor(ADC_MUX_e channel, float minVoltage, float minValue, float maxVoltage, float maxValue, float offset)
+float Ads1115c::readVoltageSensor(float minVoltage, float minValue, float maxVoltage, float maxValue, float offset)
 {
-	float voltage = readVoltage(channel);
+	ADC_MUX_e channel = settedChannel;
+
+	float voltage = readVoltage();
 
 	if(getChannelError(channel) != ADC_CHANNEL_IS_FINE) {
 		return float (ADC_INVALID_VALUE);
@@ -308,20 +309,22 @@ float Ads1115c::readVoltageSensor(ADC_MUX_e channel, float minVoltage, float min
 	return float (alpha*(voltage - minVoltage) + minValue + offset);
 }
 
-float Ads1115c::read4to20mASignalConvertedToVotage(ADC_MUX_e channel, float resistor) 
+float Ads1115c::read4to20mASignalConvertedToVotage(float resistor)
 {
-	readADC(channel);
+	ADC_MUX_e channel = settedChannel;
+
+	readADC();
 
 	if(getChannelError(channel) != ADC_CHANNEL_IS_FINE) {
-		return float (ADC_INVALID_VALUE);	
+		return float (ADC_INVALID_VALUE);
 	}
 
 	float current = float (channels[int (channel)].avgValue * ((getGainValue(channel))/32768.0) * (1000.0 / resistor));
 
 	if(current <= MIN_CURRENT_4to20mA) {
 		if(channels[int (channel)].errorReg != ADC_CHANNEL_UNDER_ZERO) {
-			channels[int (channel)].errorReg = ADC_CHANNEL_UNDER_MIN_LIMIT; 
-		}		
+			channels[int (channel)].errorReg = ADC_CHANNEL_UNDER_MIN_LIMIT;
+		}
 		return float (ADC_INVALID_VALUE);
 	}
 
@@ -329,13 +332,15 @@ float Ads1115c::read4to20mASignalConvertedToVotage(ADC_MUX_e channel, float resi
 		channels[int (channel)].errorReg = ADC_CHANNEL_OVER_MAX_LIMIT;
 		return float (ADC_INVALID_VALUE);
 	}
-	
+
 	return current;
 }
 
-float Ads1115c::read4to20mASensor(ADC_MUX_e channel, float resistor, float minValue, float maxValue, float offset)
+float Ads1115c::read4to20mASensor(float resistor, float minValue, float maxValue, float offset)
 {
-	float current = read4to20mASignalConvertedToVotage(channel, resistor);
+	ADC_MUX_e channel = settedChannel;
+
+	float current = read4to20mASignalConvertedToVotage(resistor);
 
 	if(getChannelError(channel) != ADC_CHANNEL_IS_FINE) {
 		return float (ADC_INVALID_VALUE);
@@ -345,14 +350,16 @@ float Ads1115c::read4to20mASensor(ADC_MUX_e channel, float resistor, float minVa
 	return float (alpha*(current - 4.0) + minValue + offset);
 }
 
-float Ads1115c::readWheatstone(ADC_MUX_e reference, ADC_MUX_e channel, float resistors) 
+float Ads1115c::readWheatstone(ADC_MUX_e reference, ADC_MUX_e channel, float resistors)
 {
-	float e0 = readVoltage(channel);
+	set2ReadADC(channel);
+	float e0 = readVoltage();
 	if(getChannelError(channel) != ADC_CHANNEL_IS_FINE) {
 		return float (ADC_INVALID_VALUE);
 	}
 
-	float vcc = readVoltage(reference);
+	set2ReadADC(reference);
+	float vcc = readVoltage();
 	if((vcc <= 0) || (getChannelError(channel) != ADC_CHANNEL_IS_FINE)) {
 		return float (ADC_INVALID_VALUE);
 	}

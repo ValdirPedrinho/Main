@@ -7,20 +7,15 @@ int main(int argc, char ** argv)
 	const char * timesStr = argv[1];
 	int times = stoi(argv[1]);
 
-	cout << "\n ADC TEMPERATURE AND PRESSURE TEST" << endl;
-
-	Ads1115c_t adc;	
-
 	cout << "\n ADC TEST" << endl;
+
+	Ads1115c_t adc;
+	adc.set2ReadADC(ADC_MUX_AIN0_GND);
 
 	for(int i = 0; i < times; i++)
 	{
-		usleep(50000);
-
 		cout << "Iteracao = " << i + 1 << endl;
-
-		cout << "Channel avgValue: " << adc.getAvgValue(TEST_CHANNEL) << "\n";
-		cout << "Channel read: " << adc.readVoltage(TEST_CHANNEL) << "V \n";
+		cout << "Channel read: " << adc.readVoltage() << "V \n";
 	}
 
 	return 0;
