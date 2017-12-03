@@ -45,13 +45,3 @@ uintMAX_t runPIfromADC2PWM(CtrPI* cPI, double ref, uintMAX_t feedback)
 	}
 	return runCtr2PWM(*(cPI->ctr2PWM), runPI(cPI, ref, runADC2Ctr(*(cPI->adc2Ctr), feedback)));
 }
-
-double getMinOutputPI(CtrPI cPI) 
-{
-	return cPI.min_output;
-}
-
-double getMaxOutputPI(CtrPI cPI) 
-{
-	return cPI.max_output;
-}
