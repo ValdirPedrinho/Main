@@ -1,0 +1,3 @@
+/home/valdir/GitHubProjects/Microcontroladores/ControladorDigital/gtest/CMakeFiles/edit_cache.dir
+/home/valdir/GitHubProjects/Microcontroladores/ControladorDigital/gtest/CMakeFiles/rebuild_cache.dir
+/home/valdir/GitHubProjects/Microcontroladores/ControladorDigital/gtest/CMakeFiles/runTests.dir

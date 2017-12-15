@@ -1,0 +1,6 @@
+# (omega_n)^2:
+886525
+# 2*omega_n*Csi:
+1333.33
+# Constante de tempo:
+0.0015 s

@@ -3,21 +3,31 @@
 
 #include "../TransferFunctions/TF1stOrdEqDiff.h"
 #include "../Converters/ADCCtrDAC.h"
+#include "../Filters/Butterworth2nd.h"
+
+typedef TF1st  RefFilterPI;
 
 struct controllerPI
 {
 	TF1st ctr;
-	TF1st refFilter;
+	RefFilterPI* refFilter;
+	Butterworth2nd* fbFilter;
 	ADC2Ctr* adc2Ctr;
 	Ctr2PWM* ctr2PWM;
+	double ref;
+	double fb;
 	double min_output;
 	double max_output;
 };
 
 typedef struct controllerPI CtrPI;
 
-void createPIHandler(CtrPI* cPI, ADC2Ctr* adc2Ctr, Ctr2PWM* ctr2PWM, double k, double tau, double freq_sampling, double min_output, double max_output);
+
+void createRefFilterPI(RefFilterPI* refFilter, double k, double tau, double freq_sampling);
+void createPIHandler(CtrPI* cPI, RefFilterPI* refFilter, Butterworth2nd* fbFilter, ADC2Ctr* adc2Ctr, Ctr2PWM* ctr2PWM, double k, double tau, double freq_sampling, double min_output, double max_output);
+
+double run_minimal_PI(CtrPI* cPI, double ref, double feedback);
 double runPI(CtrPI* cPI, double ref, double feedback);
-uintMAX_t runPIfromADC2PWM(CtrPI* cPI, double ref, uintMAX_t feedback);
+int_t runPI2PWM(CtrPI* cPI, double ref, double feedback);
 
 #endif
