@@ -37,14 +37,16 @@ const double  ADC_Max  = 3.3;
 const int_t   PWM_Max  = 255;
 const double  CTR_K    = 6.3333333;
 const double  CTR_Tau  = 911.85*micro_const;
-const int     CTR_Fs   = 2000;
+const int     CTR_Fs   = 1000;
 const double  CTR_Min  = 0.0;
 const double  CTR_Max  = 1.0;
+const double  BTW_fc   = 500.0;
 
 CtrPI ctrPI;
 RefFilterPI refFilter;
 ADC2Ctr adc2ctr;
 Ctr2PWM ctr2PWM;
+Butterworth2nd fbFilter;
 
 const int SAMPLES = 50;
 const int CYCLES  = CTR_Fs/2;
@@ -56,7 +58,8 @@ void setup()
   pinMode(pwmPin, OUTPUT);
   createADC2CtrHandler(&adc2ctr, ADC_Bit, ADC_SG, ADC_Min, ADC_Max);
   createCtr2PWMHandler(&ctr2PWM, PWM_Max, CTR_Min, CTR_Max);
-  createRefFilterPI(&refFilter, CTR_K, CTR_Tau, CTR_Fs);  
+  createRefFilterPI(&refFilter, CTR_K, CTR_Tau, CTR_Fs);
+  createButterworth2nd(&fbFilter, (double) BTW_fc, CTR_Fs);
   createPIHandler(&ctrPI, &refFilter, NULL, &adc2ctr, &ctr2PWM, CTR_K, CTR_Tau, CTR_Fs, CTR_Min, CTR_Max);
 }
 

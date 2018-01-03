@@ -7,6 +7,7 @@
 #define mili_const      0.001
 #define micro_const     0.000001
 #define nano_const      0.000000001
+#define pi_const		3.14159265359
 
 #ifndef NULL
 #define NULL 0

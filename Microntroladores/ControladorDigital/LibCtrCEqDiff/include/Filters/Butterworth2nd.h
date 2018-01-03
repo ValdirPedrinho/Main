@@ -1,6 +1,7 @@
 #ifndef BUTTERWORTH2ND_H
 #define BUTTERWORTH2ND_H
 
+#include <math.h>
 #include "../TransferFunctions/TF2ndOrdEqDiff.h"
 
 typedef TF2nd  Butterworth2nd;

@@ -29,6 +29,8 @@ CtrPIEqDiff.h
 /home/valdir/GitHubProjects/Microcontroladores/ControladorDigital/LibCtrCEqDiff/include/Utilities/utilities.h
 
 /home/valdir/GitHubProjects/Microcontroladores/ControladorDigital/LibCtrCEqDiff/include/Filters/Butterworth2nd.h
+math.h
+-
 ../TransferFunctions/TF2ndOrdEqDiff.h
 /home/valdir/GitHubProjects/Microcontroladores/ControladorDigital/LibCtrCEqDiff/include/TransferFunctions/TF2ndOrdEqDiff.h
 

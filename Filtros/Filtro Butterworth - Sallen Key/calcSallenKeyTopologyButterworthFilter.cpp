@@ -8,7 +8,7 @@
 
 using namespace std;
 
-#define PI 			3.14159265359
+#define PI 	3.14159265359
 
 #define ARQ_RESISTORES      "Resistores.txt"
 #define ARQ_CAPACITORES     "Capacitores.txt"
@@ -52,10 +52,13 @@ int main(int argc, char *argv[])
     vector<passivos_t *> vetorPossibilidades;
     passivos_t * novosPassivos = NULL;
 
+//    double alpha = 1.0/(4*pow(PI,2)*pow(fc,2));
+//    double beta = 1.0/(2*PI*fc*(sqrt(2)/2));
+//    double gamma = (2*PI*fc)/(sqrt(2)/2);
     double alpha = 1.0/(4*pow(PI,2)*pow(fc,2));
-    double beta = 1.0/(2*PI*fc*(sqrt(2)/2));
-    double gama = (2*PI*fc)/(sqrt(2)/2);
-    double erroAlpha, erroBeta, erroGama, erroNorma;
+    double beta = sqrt(2)/(2*PI*fc);
+    double gamma = 2*sqrt(2)*PI*fc;
+    double erroAlpha, erroBeta, errogamma, erroNorma;
 
     vector<double> resistores = leValoresComerciais(ARQ_RESISTORES);
     int qtde_res = resistores.size();
@@ -74,9 +77,9 @@ int main(int argc, char *argv[])
                     {
                         if((erroBeta = erro(beta, capacitores[l]*(resistores[i]+resistores[j])) ) < erroMax)
                         {
-                            if((erroGama = erro(gama, (resistores[i]+resistores[j])/(resistores[i]*resistores[j]*capacitores[k])) ) < erroMax)
+                            if((errogamma = erro(gamma, (resistores[i]+resistores[j])/(resistores[i]*resistores[j]*capacitores[k])) ) < erroMax)
                             {
-                                if((erroNorma = norma2(erroAlpha, erroBeta, erroGama) ) < erroMax)
+                                if((erroNorma = norma2(erroAlpha, erroBeta, errogamma) ) < erroMax)
                                 {
                                     novosPassivos = new Passivos(resistores[i], resistores[j], capacitores[k], capacitores[l], erroNorma);
                                     insereOrdenado(vetorPossibilidades, novosPassivos);
